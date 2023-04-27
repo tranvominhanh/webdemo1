@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    padding:0;
+    background-color:light-blue;
+   }
+   #container{
+    width:50px;
+    height:50px;
+    margin:auto;
+    perspective:880px;
+    margin-top:110px;
+   }
+   .cover{
+    width:100px;
+    height:100px;
+    animation:flip-animate 7s linear infinite; /*   Làm xoay các ảnh */
+    transform-style:preserve-3d; /*   các thành phần bên trong class cover sẽ hiển thị dưới dạng 3D */
+   
+}
+   #container .cover div{
+    width:200px;
+    height:200px;
+    position:absolute;
+   }
+   #container .cover div img{
+    width:200px;
+    height:200px;
+   }
+   #container .cover .front{
+    transform:translateZ(100px);/*   định vị lại ảnh trong class front dọc theo trục z trong không gian 3D */
+   }
+   #container .cover .back{
+    transform:rotateY(180deg) translateZ(100px);
+   /*   xoay ảnh theo trục y là 180 độ và dịch chuyển đến trục Z */
+   }
+   #container .cover .left{
+    transform:rotateY(-90deg) translateX(-100px);
+     /*   xoay ảnh theo trục y là -90 độ và dịch chuyển đến trục X */
+    transform-origin:left;/*   Cho phép dịch chuyển phần tử sang trái */
+     
+   }
+   #container .cover .right{
+    transform:rotateY(90deg) translateX(100px);/*   xoay ảnh theo trục Y là 90 độ và dịch chuyển đến trục X */
+    transform-origin:right;/*   Cho phép dịch chuyển phần tử sang phải */
+   }
+   #container .cover .top{
+    transform:rotateX(-90deg) translateY(-100px);/*   xoay ảnh theo trục X là -90 độ và dịch chuyển đến trục Y */
+    transform-origin:top;/*   Cho phép dịch chuyển phần tử lên trên */
+   }
+   #container .cover .bottom{
+    transform:rotateX(90deg) translateY(100px);/*   xoay ảnh theo trục X là 90 độ và dịch chuyển đến trục Y */
+    transform-origin:bottom;/*   Cho phép dịch chuyển phần tử xuống dưới */
+   }
+   @keyframes flip-animate{
+    0%{transform:rotateX(0) rotateY(0deg);}
+    20%{transform: rotateX(-90deg) rotateY(130deg);}
+    40%{transform: rotatey(50deg) rotateY(130deg);}
+   60%{transform: rotatey(180deg) rotateY(-130deg);}
+    80%{transform:rotateX(-50deg) rotateY(-70deg);}
+    100%{transform:rotateX(0deg) rotateY(0deg);}
+   }/* điều khiển các hiệu ứng của thuộc tính animation */
+   .cover:hover{ animation-play-state:paused;}
+   .nen
+   {
+    background-color: black;
+   }
